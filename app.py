@@ -21,7 +21,7 @@ rad_gen = st.number_input("☀️ Radiație generală (W/m²)", value=0.1)
 rad_dif = st.number_input("🌥️ Radiație difuză (W/m²)", value=0.1)
 
 # Buton de predicție
-if st.button("Prezice consumul"):
+if st.button("Calculează consumul"):
     input_data = np.array([[temp, umid, vant, ora, rad_gen, rad_dif]])
     rezultat = model.predict(input_data)[0]
 
