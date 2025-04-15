@@ -16,7 +16,7 @@ Modelul a fost antrenat pe date reale și include și efectele radiației solare
 temp = st.number_input("🌡️ Temperatura [°C]", value=20.0)
 umid = st.number_input("💧 Umiditate [%]", value=50.0)
 vant = st.number_input("🌬️ Viteza vântului [m/s]", value=2.0)
-ora = st.number_input("🕒 Ora din zi (0–23)", min_value=0, max_value=23, value=12)
+ora = st.number_input("🕒 Ora din zi (00–23)", min_value=0, max_value=23, value=12)
 rad_gen = st.number_input("☀️ Radiație generală (W/m²)", value=0.1)
 rad_dif = st.number_input("🌥️ Radiație difuză (W/m²)", value=0.1)
 
