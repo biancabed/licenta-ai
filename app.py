@@ -13,10 +13,21 @@ Modelul a fost antrenat pe date reale și include și efectele radiației solare
 """)
 
 # Formulare
-temp = st.number_input("🌡️ Temperatura [°C]", value=20.0)
+temp = st.number_input("🌡 ️ Temperatura [°C]", value=20.0)
 umid = st.number_input("💧 Umiditate [%]", value=50.0)
-vant = st.number_input("🌬️ Viteza vântului [m/s]", value=2.0)
-ora = st.number_input("🕒 Ora din zi (00–23)", min_value=0, max_value=23, value=12)
+vant = st.number_input("🌬 ️ Viteza vântului [m/s]", value=2.)
+ora  = st.selectbox("⏰ Ora din zi", options=[
+    ("00", 0),
+    ("01", 1), ("02", 2), ("03", 3), ("04", 4), ("05", 5),
+    ("06", 6), ("07", 7), ("08", 8), ("09", 9), ("10", 10), ("11", 11),
+    ("12 - Amiază", 12), ("13", 13), ("14", 14), ("15", 15),
+    ("16", 16), ("17", 17), ("18", 18), ("19", 19), ("20", 20),
+    ("21", 21), ("22", 22), ("23", 23)
+], format_func=lambda x: x[0])
+
+ora = ora[1]
+
+
 rad_gen = st.number_input("☀️ Radiație generală (W/m²)", value=0.1)
 rad_dif = st.number_input("🌥️ Radiație difuză (W/m²)", value=0.1)
 
@@ -31,7 +42,7 @@ if st.button("Calculează consumul"):
     if rezultat < 10000:
         st.info("✅ Consum scăzut – foarte eficient energetic.")
     elif rezultat < 25000:
-        st.warning("⚠️ Consum moderat – se încadrează în valorile normale.")
+        st.warning("⚠ ️ Consum moderat – se încadrează în valorile normale.")
     else:
         st.error("🔥 Consum ridicat – potențial excesiv de energie.")
 
