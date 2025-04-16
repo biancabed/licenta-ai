@@ -35,6 +35,6 @@ rad_dif = st.number_input("🌥️ Radiație difuză (W/m²)", value=0.1)
 if st.button("Calculează producția de energie"):
     input_data = np.array([[temp, umid, vant, ora, rad_gen, rad_dif]])
     rezultat = model.predict(input_data)[0]
-    st.success(f"Estimare consum: **{rezultat:.2f} kWh**")
+    st.success(f"Estimare producție: **{rezultat:.2f} kWh**")
 
     
