@@ -13,7 +13,7 @@ Modelul a fost antrenat pe date reale și include și efectele radiației solare
 """)
 
 # Formulare
-temp = st.number_input("🌡 ️ Temperatura [°C]", value=20.0)
+temp = st.number_input("🌡 Temperatura [°C]", value=20.0)
 umid = st.number_input("💧 Umiditate [%]", value=50.0)
 vant = st.number_input("🌬️ Viteza vântului [m/s]", value=2.)
 ora  = st.selectbox("⏰ Ora din zi", options=[
